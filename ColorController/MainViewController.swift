@@ -13,7 +13,7 @@ protocol ColorUpdaterDelegate: AnyObject {
 
 final class MainViewController: UIViewController {
     
-    private var backgroundColor: UIColor = .white
+    private var backgroundColor: UIColor?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +28,7 @@ final class MainViewController: UIViewController {
     }
 }
 
+// MARK: - ColorUpdaterDelegate
 extension MainViewController: ColorUpdaterDelegate {
     func didSelectColor(_ color: UIColor) {
         backgroundColor = color
